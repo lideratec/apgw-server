@@ -1,0 +1,13 @@
+server:
+  port: 8095
+
+spring:
+  application:
+    name: apgw-server
+  cloud:
+    gateway:
+      routes:
+      - id: idat-estudiante
+        uri: http://localhost:60082
+        predicates:
+        - Path=/api/estudiante/**
